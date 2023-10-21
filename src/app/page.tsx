@@ -2,11 +2,13 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { APIGetPlanet } from "@/lib/APICalls";
+import { useCreatePlanetsOne } from "@/hooks";
 
 export default function Home() {
   useEffect(() => {
     const createPlanet = async () => {
-      await APIGetPlanet();
+      useCreatePlanetsOne();
+      //await APIGetPlanet();
     };
     createPlanet();
   }, []);
