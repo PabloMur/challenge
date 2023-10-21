@@ -1,14 +1,12 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect } from "react";
-import { APIGetPlanet } from "@/lib/APICalls";
-import { useCreatePlanetsOne } from "@/hooks";
+import { useCreateComeths, useCreatePlanetsPhaseTwo } from "@/hooks";
 
 export default function Home() {
   useEffect(() => {
     const createPlanet = async () => {
-      useCreatePlanetsOne();
-      //await APIGetPlanet();
+      await useCreateComeths();
+      await useCreatePlanetsPhaseTwo();
     };
     createPlanet();
   }, []);
